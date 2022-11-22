@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import Navbar from './components/NavBar.vue'
+import MainContentVue from './components/MainContent.vue';
 
 </script>
 
@@ -9,6 +10,9 @@ import Navbar from './components/NavBar.vue'
    <nav class="nav">
     <Navbar />
    </nav>
+   <section class="content">
+    <MainContentVue />
+   </section>
     
   </div>
 
