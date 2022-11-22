@@ -28,12 +28,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 div .container {
     display: flex;
     flex-direction: row;
     margin: 1rem;
     font-size: 1rem;
-    min-width:auto;
 }
 
 ul {
@@ -56,19 +56,17 @@ a:hover {
 
 .container ul li {
     padding: 10px 15px;
-    align-items: center;
 }
 
 ul {
     display: flex;
 }
 
-.split li a {
+div .split-nav {
     margin-left: auto;
-    color: red;
 }
 
-@media (max-width: 1440px) {
+@media (min-width: 760px) {
     .container
     {
         display: flex;
