@@ -1,31 +1,30 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import Navbar from './components/NavBar.vue'
-import MainContentVue from './components/MainContent.vue';
-
+import { RouterLink, RouterView } from "vue-router";
+import Navbar from "@/components/NavBar.vue";
+import MainContentVue from "@/components/MainContent.vue";
 </script>
 
 <template>
   <div>
-   <nav class="nav">
     <Navbar />
-   </nav>
-   <section class="content">
-    <MainContentVue />
-   </section>
-    
-  </div>
 
-  <RouterView />
+    <section>
+      <MainContentVue />
+    </section>
+
+    <RouterView />
+
+  </div>
 </template>
 
 <style scoped>
-h1 {
+
+/* h1 {
   color: var(--my-dn-title-text);
 }
 
 p {
   color: var(--my-dn-content-text);
   font-weight: bold;
-}
+} */
 </style>

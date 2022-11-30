@@ -2,13 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
 
 #app {
+  font-family: 'Epilogue', sans-serif;;
   max-width: 1440px;
-  min-height: 1vh;
+  max-height: 1vh;
   margin: 0 auto;
   padding: 0;
   font-size: 18px;
   box-sizing: border-box;
-  font-weight: normal;
+  background-repeat: no-repeat;
 }
 
 

@@ -1,75 +1,112 @@
 <template>
-    <div class="container">
-        <div class="main-nave">
-            <ul >
-                <li class="logo"><a href="#"><img src="./images/logo.svg" alt="" /></a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Company</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </div>   
-        <div class="split-nav">
-            <ul>
-                <li class=""><a href="#">Login</a></li>
-                <li class=""><a href="#">Register</a></li>
-            </ul> 
-        </div>
+  <nav>
+    <div class="menu-item menu-logo">
+      <routerLink to="/"><img src="./images/logo.svg" alt="" /></routerLink>
     </div>
+    <Features class="menu-item" title="Features" />
+    <Company class="menu-item" comprop="Company" />
+    <div class="menu-item">
+      <router-link to="/Careers">Careers</router-link>
+    </div>
+    <div class="menu-item"><router-link to="/About">About</router-link></div>
+
+    <div class="margin-left">
+      <div class="menu-item"><router-link to="/Login">Login</router-link></div>
+      <div class="menu-item">
+        <router-link to="/Register">Register</router-link>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script>
-
+import Features from "../components/FeaturesMenu.vue";
+import Company from "../components/CompanyMenu.vue";
+export default {
+  name: "navbar",
+  components: {
+    Features,
+    Company,
+  },
+};
 </script>
 
 <style scoped>
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-div .container {
-    display: flex;
-    flex-direction: row;
-    margin: 1rem;
-    font-size: 1rem;
+nav {
+  /* margin: 0.5rem; */
+  font-size: 0.75rem;
+  width: 100%;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.menu-logo {
+  width: 5rem;
 }
 
 img {
-    width: fit-content;
+  width: 4.25rem;
+  margin-top: 10px;
 }
+
+div .margin-left {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.margin-left .menu-item:nth-child(2) {
+  display: inline-block;
+  width: 75px;
+  padding: 3px 10px;
+  align-items: center;
+}
+
+.menu-item {
+  /* padding: 25px 40px; */
+  position: relative;
+  display: flex;
+  color: var(--my-dn-content-text);
+  transition: 0.3s ease-in-out;
+  margin: 8px;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  color: var(--my-dn-content-text);
+}
+
+.menu-item:last-of-type {
+  border: 1.5px solid var(--my-dn-content-text);
+  border-radius: 10px;
+}
+
+.menu-item:last-of-type:hover {
+  border: 1.5px solid var(--my-dn-title-text);
+}
+
 a {
-   color: var(--my-dn-content-text);
-   text-decoration: none;
+  color: var(--my-dn-content-text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.8rem;
+  transition: 0.3s ease-in-out;
 }
- 
+
 a:hover {
-    color: var(--my-dn-title-text);
+  color: var(--my-dn-title-text);
+  cursor: pointer;
 }
 
-.container ul li {
-    padding: 10px 15px;
-}
-
-ul {
+@media (min-width: 960px) {
+  nav,
+  .margin-left {
     display: flex;
-}
-
-div .split-nav {
-    margin-left: auto;
-}
-
-@media (min-width: 760px) {
-    .container
-    {
-        display: flex;
-    }
+    align-items: center;
+    justify-content: center;
+  }
 }
 </style>
